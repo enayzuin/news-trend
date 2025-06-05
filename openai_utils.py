@@ -6,10 +6,14 @@ import openai
 import logging
 import re
 from bs4 import BeautifulSoup
+import os
 
 # Configuração de logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+# Desabilita o uso de proxies para a biblioteca requests
+os.environ['no_proxy'] = '*'
 
 class OpenAIClient:
     """Cliente para interagir com a API da OpenAI."""
@@ -21,7 +25,10 @@ class OpenAIClient:
         Args:
             api_key (str): Chave de API para a OpenAI
         """
-        openai.api_key = api_key
+        self.client = openai.OpenAI(
+            api_key=api_key,
+            base_url="https://api.openai.com/v1"
+        )
         logger.info("Cliente da OpenAI inicializado")
     
     def rewrite_article(self, html_content, title, source_name):
@@ -61,7 +68,7 @@ class OpenAIClient:
             logger.info(f"Enviando solicitação para reescrever artigo: '{title}'")
             
             # Faz a chamada para a API da OpenAI
-            response = openai.chat.completions.create(
+            response = self.client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "Você é um assistente especializado em reescrever conteúdo de notícias em formato HTML, mantendo a essência da informação mas alterando a forma de apresentação."},
