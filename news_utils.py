@@ -42,7 +42,7 @@ class NewsAPIClient:
         """
         try:
             # Calcula a data de uma semana atrás para limitar os resultados
-            today = (datetime.now()).strftime('%Y-%m-%d')
+            yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
             
             endpoint = f"{self.base_url}/everything"
             params = {
@@ -51,7 +51,7 @@ class NewsAPIClient:
                 'sortBy': sort_by,
                 'pageSize': page_size,
                 'page': page,
-                'from': today,
+                'from': yesterday,
                 'apiKey': self.api_key
             }
             
