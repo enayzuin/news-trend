@@ -113,6 +113,15 @@ def extract_article_title_from_html(html_content):
         return None
 
 def run_pipeline():
+    """Exibe as configurações do pipeline."""
+    logger.info(f"OPENAI_API_KEY: {OPENAI_API_KEY}")
+    logger.info(f"NEWSAPI_API_KEY: {NEWSAPI_API_KEY}")
+    logger.info(f"WORDPRESS_URL: {WORDPRESS_URL}")
+    logger.info(f"WORDPRESS_USERNAME: {WORDPRESS_USERNAME}")
+    logger.info(f"WORDPRESS_PASSWORD: {WORDPRESS_PASSWORD}")
+    logger.info(f"MAX_TRENDS: {MAX_TRENDS}")
+    logger.info(f"MAX_NEWS_PER_TREND: {MAX_NEWS_PER_TREND}")
+    
     """Executa o pipeline completo."""
     output_dir = create_output_directory()
     results = []

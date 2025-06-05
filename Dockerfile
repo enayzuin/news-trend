@@ -4,6 +4,10 @@ FROM python:3.10-slim
 # Define o diretório de trabalho
 WORKDIR /app
 
+# Configura o fuso horário para Brasília
+ENV TZ=America/Sao_Paulo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Copia os arquivos de requisitos primeiro para aproveitar o cache do Docker
 COPY requirements.txt .
 
