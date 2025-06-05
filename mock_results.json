@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-04-26T18:47:16.556234",
+  "total_processed": 2,
+  "results": [
+    {
+      "trend": "Copa do Brasil",
+      "title": "Flamengo vence e avança para as quartas de final da Copa do Brasil",
+      "content": "<article><h1>Flamengo vence e avança para as quartas de final da Copa do Brasil</h1><p>Em jogo emocionante, o Flamengo venceu o Athletico-PR por 2 a 1 e garantiu vaga nas quartas de final da Copa do Brasil.</p><p>Os gols foram marcados por Pedro e Arrascaeta, enquanto Pablo descontou para o Athletico.</p><p>Com o resultado, o Flamengo aguarda o sorteio para conhecer seu próximo adversário na competição.</p></article>",
+      "status": "published",
+      "wordpress_id": "12345",
+      "file_path": "/home/ubuntu/projeto_trends/test_output/mock_article_1.html"
+    },
+    {
+      "trend": "Inteligência Artificial",
+      "title": "Nova ferramenta de IA promete revolucionar diagnósticos médicos",
+      "content": "<article><h1>Nova ferramenta de IA promete revolucionar diagnósticos médicos</h1><p>Pesquisadores brasileiros desenvolveram uma nova ferramenta de inteligência artificial capaz de identificar doenças raras com precisão superior a 95%.</p><p>O sistema utiliza aprendizado profundo para analisar exames de imagem e identificar padrões imperceptíveis ao olho humano.</p><p>Especialistas acreditam que a tecnologia pode reduzir significativamente o tempo de diagnóstico e melhorar o tratamento de pacientes.</p></article>",
+      "status": "published",
+      "wordpress_id": "12346",
+      "file_path": "/home/ubuntu/projeto_trends/test_output/mock_article_2.html"
+    }
+  ]
+}
