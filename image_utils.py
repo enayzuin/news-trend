@@ -190,7 +190,7 @@ if __name__ == "__main__":
     test_title = "Brasil vence Argentina em jogo decisivo da Copa América"
     test_content = """
     <article>
-        <h1>Brasil vence Argentina em jogo decisivo da Copa América</h1>
+        <h2>Brasil vence Argentina em jogo decisivo da Copa América</h2>
         <p>Em partida realizada ontem no Maracanã, a seleção brasileira venceu a Argentina por 2 a 1.</p>
         <p>Os gols foram marcados por Neymar e Vinicius Jr., enquanto Messi descontou para os argentinos.</p>
         <p>Com essa vitória, o Brasil se classifica para a próxima fase da competição.</p>

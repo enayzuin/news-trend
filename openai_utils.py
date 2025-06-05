@@ -77,7 +77,21 @@ class OpenAIClient:
             # Garante que o resultado é HTML válido
             if not rewritten_html.startswith('<'):
                 # Se não começar com tag HTML, envolve em tags básicas
-                rewritten_html = f"<article>\n<h1>{title}</h1>\n{rewritten_html}\n</article>"
+                rewritten_html = f"""<!DOCTYPE html>
+                                            <html lang="pt-BR">
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="description" content="{title}">
+                                                <title>{title}</title>
+                                            </head>
+                                            <body>    
+                                                    {rewritten_html}
+                                            </body>
+                                            </html>"""
+            
+            # Garante que o resultado está dentro de uma tag article
+            if not rewritten_html.startswith('<article'):
+                rewritten_html = f"<article>\n{rewritten_html}\n</article>"
             
             logger.info(f"Artigo reescrito com sucesso: '{title}'")
             return rewritten_html
@@ -115,7 +129,9 @@ Instruções específicas:
 3. Remova qualquer menção à fonte original, repórteres, ou elementos específicos do portal
 4. Modifique ligeiramente o título, mantendo o tema principal
 5. Use tags HTML apropriadas (h1, h2, p, etc.) para estruturar o conteúdo
-6. Não gerar tags de header duplicadas. Exemplo: No mesmo html trazer duas tags <h1> ou duas tags <h2> e assim vai
+6. A estrutura do título deve seguir exatamente este padrão:
+   - Uma única tag <h2> para o subtítulo
+   - Não repetir o título em nenhum outro lugar do conteúdo
 7. No html evite inserir várias quebras de linha seguidas sem conteúdo.
 8. Inclua pelo menos 3 parágrafos no corpo da notícia
 9. Retorne APENAS o código HTML, sem explicações adicionais
