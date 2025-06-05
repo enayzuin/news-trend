@@ -24,4 +24,4 @@ ENV PORT=8000
 ENV PYTHONUNBUFFERED=1
 
 # Comando para iniciar o servidor Flask
-CMD ["python", "app/app.py"]
+CMD ["python", "app.py"]
