@@ -3,7 +3,7 @@ Arquivo de configuração para as APIs utilizadas no projeto.
 """
 
 # Configuração da API OpenAI
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 
 # Configuração da NewsAPI
 NEWSAPI_API_KEY = "87efc86660e541ab8b3d732a13dd3f13"
